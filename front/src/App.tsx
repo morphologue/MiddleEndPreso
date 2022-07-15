@@ -3,7 +3,10 @@ import styled from "styled-components";
 import MortgageForm from "./MortgageForm";
 import ResultTable, { MortgageCalcTableResult } from "./ResultTable";
 import SpinningOverlay from "./SpinningOverlay";
-import type { MortgageCalcParams } from "./types";
+import type { MortgageCalcParams, MortgageCalcResult } from "./types";
+import init, { calc_repayment } from "middle/rust/pkg/mortgage_calc";
+
+const initialisationPromise = init();
 
 export default function App() {
   const [results, setResults] = useState<MortgageCalcTableResult[]>([]);
@@ -13,13 +16,15 @@ export default function App() {
     setIsHandling(true);
     setResults([]);
     try {
-      await new Promise((res) => setTimeout(res, 1500));
+      await initialisationPromise;
+      const startMillis = performance.now();
+      const feResult = calc_repayment(values) as MortgageCalcResult;
+      const feEndMillis = performance.now();
       setResults([
         {
-          repaymentAmount: 69,
-          poweredBy: "Dummy",
+          ...feResult,
           runningIn: "Front end",
-          elapsedSeconds: 0.1,
+          elapsedMillis: feEndMillis - startMillis,
         },
       ]);
     } finally {

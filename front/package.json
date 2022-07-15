@@ -21,10 +21,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "ln -sf ../../middle node_modules && react-scripts start",
+    "build": "ln -sf ../../middle node_modules && react-scripts build",
+    "test": "ln -sf ../../middle node_modules && react-scripts test",
+    "eject": "ln -sf ../../middle node_modules && react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

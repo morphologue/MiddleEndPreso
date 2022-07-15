@@ -2,7 +2,7 @@ import type { MortgageCalcResult } from "./types";
 
 export type MortgageCalcTableResult = MortgageCalcResult & {
   runningIn: "Front end" | "Back end";
-  elapsedSeconds: number;
+  elapsedMillis: number;
 };
 
 export default function ResultTable({ results }: { results: MortgageCalcTableResult[] }) {
@@ -13,7 +13,7 @@ export default function ResultTable({ results }: { results: MortgageCalcTableRes
           <th scope="col">Repayment amount</th>
           <th scope="col">Powered by</th>
           <th scope="col">Running in</th>
-          <th scope="col">Elapsed seconds</th>
+          <th scope="col">Elapsed ms</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +22,7 @@ export default function ResultTable({ results }: { results: MortgageCalcTableRes
             <td>{r.repaymentAmount}</td>
             <td>{r.poweredBy}</td>
             <td>{r.runningIn}</td>
-            <td>{r.elapsedSeconds}</td>
+            <td>{r.elapsedMillis}</td>
           </tr>
         ))}
       </tbody>

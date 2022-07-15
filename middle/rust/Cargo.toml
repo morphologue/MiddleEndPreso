@@ -1,0 +1,15 @@
+[package]
+name = "mortgage-calc"
+version = "0.1.0"
+edition = "2021"
+authors = ["morphologue@users.noreply.github.com"]
+description = "Calculate mortgage repayments"
+license = "MIT/Apache-2.0"
+repository = "https://github.com/morphologue/MiddleEndPreso"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
