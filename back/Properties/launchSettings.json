@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "Morphologue.MiddleEndPreso": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:4999",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RUST_BACKTRACE": "1"
+      }
+    }
+  }
+}

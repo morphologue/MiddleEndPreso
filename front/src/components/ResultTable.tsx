@@ -1,7 +1,9 @@
-import type { MortgageCalcResult } from "./types";
+import type { MortgageCalcResult } from '../types';
+
+export type HostType = 'Front end' | 'Back end';
 
 export type MortgageCalcTableResult = MortgageCalcResult & {
-  runningIn: "Front end" | "Back end";
+  runningIn: HostType;
   elapsedMillis: number;
 };
 

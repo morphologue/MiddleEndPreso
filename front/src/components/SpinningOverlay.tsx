@@ -1,9 +1,9 @@
-import type { PropsWithChildren } from "react";
-import styled from "styled-components";
+import type { PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
 export default function SpinningOverlay({
   isSpinning,
-  children,
+  children
 }: PropsWithChildren<{
   isSpinning: boolean;
 }>) {
