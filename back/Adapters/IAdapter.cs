@@ -1,6 +1,6 @@
 using Morphologue.MiddleEndPreso.Models;
 
-namespace Morphologue.MiddleEndPreso;
+namespace Morphologue.MiddleEndPreso.Adapters;
 
 internal interface IAdapter
 {
