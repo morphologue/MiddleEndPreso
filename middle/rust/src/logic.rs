@@ -19,6 +19,6 @@ pub fn calc_repayment(params: MortgageCalcParams) -> MortgageCalcResult<'static>
 
     MortgageCalcResult {
         repayment_amount,
-        powered_by: "Rust"
+        powered_by: "Rust Ⓡ"
     }
 }

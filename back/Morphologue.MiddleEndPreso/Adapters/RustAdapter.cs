@@ -21,7 +21,7 @@ internal class RustAdapter : IAdapter
         var mustBeFreed = calc_repayment_c(jsonParams);
         try
         {
-            jsonResult = Marshal.PtrToStringAnsi(mustBeFreed)
+            jsonResult = Marshal.PtrToStringUTF8(mustBeFreed)
                          ?? throw new ApplicationException("The return JSON cannot be marshalled");
         }
         finally
@@ -35,8 +35,8 @@ internal class RustAdapter : IAdapter
 
     // The IntPtr return type prevents P/Invoke from freeing the string which was allocated by Rust, which would
     // corrupt Rust memory. Instead we pass the pointer back to calc_repayment_cfree() to free it.
-    [DllImport("libmortgage_calc.dylib", CharSet = CharSet.Ansi)]
-    private static extern IntPtr calc_repayment_c(string jsonParams);
+    [DllImport("libmortgage_calc.dylib")]
+    private static extern IntPtr calc_repayment_c([MarshalAs(UnmanagedType.LPUTF8Str)] string jsonParams);
 
     [DllImport("libmortgage_calc.dylib")]
     private static extern void calc_repayment_cfree(IntPtr rawResult);
