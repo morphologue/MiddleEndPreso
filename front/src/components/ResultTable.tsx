@@ -20,7 +20,7 @@ export default function ResultTable({ results }: { results: MortgageCalcTableRes
       </thead>
       <tbody>
         {results.map((r) => (
-          <tr key={r.runningIn}>
+          <tr key={r.poweredBy + r.runningIn}>
             <td>{r.repaymentAmount}</td>
             <td>{r.poweredBy}</td>
             <td>{r.runningIn}</td>
