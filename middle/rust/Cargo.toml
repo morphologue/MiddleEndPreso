@@ -8,7 +8,7 @@ license = "MIT/Apache-2.0"
 repository = "https://github.com/morphologue/MiddleEndPreso"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }

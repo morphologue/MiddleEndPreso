@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="..\middle\rust\target\debug\libmortgage_calc.dylib">
+        <Content Include="..\..\middle\rust\target\debug\libmortgage_calc.dylib">
             <Link>libmortgage_calc.dylib</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
