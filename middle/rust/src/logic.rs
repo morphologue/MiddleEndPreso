@@ -1,6 +1,6 @@
 use crate::*;
 
-pub fn calc_repayment(params: &MortgageCalcParams) -> MortgageCalcResult {
+pub fn calc_repayment(params: MortgageCalcParams) -> MortgageCalcResult<'static> {
     // Calculate the effective interest rate over the period.
     let daily_factor = 1.0 + params.interest_rate / 36500.0;
     let effective_rate = match params.frequency {
